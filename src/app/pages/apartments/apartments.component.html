@@ -1,0 +1,91 @@
+<section class="explore">
+  <div class="main-explore grid">
+    <div
+      class="image"
+      [style.background-image]="'url(' + selectedInvestment?.image + ')'"
+    ></div>
+    <div class="background"></div>
+    <div class="text">
+      <h1>{{ selectedInvestment?.name }}</h1>
+      <h2>{{ selectedInvestment?.location }}</h2>
+    </div>
+  </div>
+
+  <!--  -->
+  <div class="explore-nav grid">
+    <div class="explore-nav-info">
+      <p>
+        Found <strong>{{ apartments.length }}</strong> apartments
+      </p>
+    </div>
+    <div class="explore-nav-select">
+      <p>Select view</p>
+      <img src="assets/icons/select_list.png" alt="" />
+      <img src="assets/icons/select_box.png" alt="" />
+    </div>
+  </div>
+
+  <!--  Card -->
+
+  <div class="apartments-info grid">
+    <div class="apartments-desc" *ngFor="let apartment of apartments">
+      <shared-card
+        [data]="mapToCard(apartment)"
+        [fullscreenImage]="false"
+      ></shared-card>
+    </div>
+  </div>
+
+  <!--  Lista -->
+  <div class="apartments-info-list grid">
+    <div class="apartments-desc" *ngFor="let apartment of apartments">
+      <shared-list
+        [data]="mapToList(apartment)"
+        [fullscreenImage]="false"
+      ></shared-list>
+      <!--
+      <div class="apartment-photo">
+        <img [src]="apartment.image" alt="" />
+      </div>
+      <div class="data">
+        <div class="data-info">
+          <div class="main-data-info">
+            <h1>{{ apartment.number }}</h1>
+            <h2>{{ apartment.location }}</h2>
+          </div>
+          <div>
+            <p>Living area:</p>
+            <p>{{ apartment.area }} m<sup>2</sup></p>
+          </div>
+          <div>
+            <p>Bedrooms:</p>
+            <p>{{ apartment.bedrooms }}</p>
+          </div>
+          <div>
+            <p>Floor:</p>
+            <p>{{ apartment.floor }}</p>
+          </div>
+          <div>
+            <p>Garage:</p>
+            <p>{{ apartment.garage }}</p>
+          </div>
+          <div>
+            <p>Price:</p>
+            <p>{{ apartment.price }} PLN</p>
+          </div>
+          <div>
+            <p>Terrace:</p>
+            <p>{{ apartment.terrace }}</p>
+          </div>
+        </div>
+        <a [routerLink]="['/apartments/', apartment.id]">
+          <button>Show list</button>
+        </a>
+      </div> -->
+    </div>
+  </div>
+</section>
+
+<!-- <section class="single-apartment">
+  <img src="assets/images/plan-1.jpg" alt="" />
+</section> -->

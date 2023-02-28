@@ -7,6 +7,10 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { HeaderComponent } from './core/components/header/header.component';
 import { FooterComponent } from './core/components/footer/footer.component';
+import { InvestmentsComponent } from './pages/investments/investments.component';
+import { ApartmentsComponent } from './pages/apartments/apartments.component';
+import { CardComponent } from './shared/card/card.component';
+import { ListComponent } from './shared/list/list.component';
 
 @NgModule({
   declarations: [
@@ -14,13 +18,12 @@ import { FooterComponent } from './core/components/footer/footer.component';
     HomepageComponent,
     AboutUsComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    InvestmentsComponent,
+    ApartmentsComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, CardComponent, ListComponent],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,0 +1,19 @@
+<div class="card-desc">
+  <div class="card-photo" [ngClass]="{ fullscreen: fullscreenImage }">
+    <img [src]="data?.image" alt="" />
+  </div>
+  <div class="data">
+    <h1>{{ data?.title }}</h1>
+    <h2>{{ data?.subtitle }}</h2>
+    <table>
+      <tr *ngFor="let prop of data?.properties">
+        <td>{{ prop.key }}</td>
+        <td>{{ prop.value }} m<sup>2</sup></td>
+      </tr>
+    </table>
+
+    <a [routerLink]="[data?.actionUrl, data?.id]">
+      <button>{{ data?.actionText }}</button>
+    </a>
+  </div>
+</div>

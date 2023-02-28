@@ -1,0 +1,229 @@
+.investments {
+  font-family: Roboto;
+
+  // main-investments
+
+  .main-investments {
+    width: 100%;
+    height: 230px;
+    background-color: #aacce5;
+    // background-size: auto;
+    // opacity: 0%;
+
+    .grid {
+      background-image: url("/assets/images/bg.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      height: 100%;
+    }
+
+    h1 {
+      font-size: 24px;
+      color: #6a48c5;
+      padding-top: 58px;
+      padding-bottom: 9px;
+    }
+    h2 {
+      font-size: 36px;
+      font-weight: bold;
+      padding-bottom: 78px;
+      width: 340px;
+    }
+  }
+
+  // investments-nav
+  .investments-nav {
+    font-family: inherit;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .investments-nav-info {
+      p {
+        font-size: 18px;
+        :nth-of-type(2) {
+          font-weight: bold;
+        }
+      }
+    }
+    .investments-nav-select {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding-bottom: 35px;
+
+      p {
+        font-size: 18px;
+        font-weight: 200;
+        padding-right: 12px;
+      }
+
+      img {
+        padding-right: 9px;
+      }
+    }
+  }
+  // investments-info
+
+  .investments-info {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 50px;
+    margin-bottom: 70px;
+
+    .investments-desc {
+      background-color: #f9f9f9;
+      border-radius: 20px;
+      height: 514px;
+      max-width: 350px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+      }
+
+      .data {
+        padding-left: 34px;
+        padding-right: 41px;
+        padding-top: 33px;
+        padding-bottom: 49px;
+
+        h1 {
+          width: 200px;
+          font-size: 24px;
+          font-weight: bold;
+          padding-bottom: 9px;
+        }
+        h2 {
+          font-size: 14px;
+          color: #4bcfc8;
+          padding-bottom: 19px;
+        }
+        table {
+          width: 100%;
+          height: 64px;
+          font-size: 16px;
+          font-weight: 200;
+          tr {
+            td:first-of-type {
+              text-align: left;
+              width: 60%;
+            }
+            td:last-of-type {
+              text-align: right;
+              width: 40%;
+            }
+          }
+        }
+      }
+
+      button {
+        width: 100%;
+        border-radius: 5px;
+        margin-top: 10px;
+        background-color: #6a48c5;
+        color: #fff;
+        padding: 14px 15px;
+        font-size: 16px;
+        font-weight: 200;
+        border-style: none;
+      }
+    }
+  }
+
+  // investments-info-list
+
+  .investments-info-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 50px;
+    margin-bottom: 70px;
+
+    .investments-desc {
+      display: flex;
+
+      background-color: #f9f9f9;
+      border-radius: 20px;
+      height: 100px;
+      max-width: 100%;
+
+      img {
+        width: 170px;
+        height: 100px;
+        border-radius: 20px;
+      }
+
+      .data {
+        flex-basis: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 24px;
+
+        .data-info {
+          flex-basis: 35%;
+          display: flex;
+          flex-direction: column;
+
+          h1 {
+            font-size: 24px;
+          }
+          h2 {
+            font-size: 14px;
+            color: #4bcfc8;
+          }
+          // p {
+
+          // }
+        }
+      }
+
+      button {
+        flex-basis: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 140px;
+        height: 46px;
+        border-radius: 5px;
+        background-color: #6a48c5;
+        color: #fff;
+        // padding: 14px 15px;
+        font-size: 16px;
+        font-weight: 200;
+        border-style: none;
+      }
+    }
+  }
+}
+//
+
+@media all and (max-width: 430px) {
+  .investments {
+    // padding-left: 30px;
+    // padding-right: 30px;
+    .main-investments {
+      // margin-left: 30px;
+
+      .grid {
+        background: fixed;
+
+        // width: 330px;
+        // display: flex;
+        // flex-direction: column;
+      }
+    }
+  }
+
+  .investments-info {
+    display: flex;
+    flex-direction: column;
+  }
+}

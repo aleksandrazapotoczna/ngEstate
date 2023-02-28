@@ -1,3 +1,60 @@
-<a routerLink="/">Homepage</a>
-<a routerLink="about-us">About us</a>
+<header class="grid">
+  <div class="left-side">
+    <div class="logo"><img src="assets/images/logo.png" /></div>
+    <ul class="nav">
+      <li><a routerLink="home" routerLinkActive="active">Homepage</a></li>
+      <li><a routerLink="about-us" routerLinkActive="active">About us</a></li>
+      <li>
+        <a routerLink="investments" routerLinkActive="active">Investments</a>
+      </li>
+      <li><a href="#" routerLinkActive="active">Contact</a></li>
+    </ul>
+  </div>
+  <div class="right-side">
+    <ul class="secondary-menu">
+      <li>
+        <a href="#"><img src="assets/icons/star.svg" /></a>
+      </li>
+      <li>
+        <a href="#"><img src="assets/icons/profile.svg" /></a>
+      </li>
+      <li><a href="#">Login</a></li>
+    </ul>
+    <img
+      class="mobile-menu"
+      src="assets/icons/menu.svg"
+      (click)="toggleMenu()"
+    />
+  </div>
+</header>
 
+<div class="mobile-menu-sidebar" [ngClass]="{ hidden: menuHidden }">
+  <div class="header">
+    <img src="assets/icons/right_menu_icon.svg" (click)="toggleMenu()" />
+  </div>
+  <div class="menu">
+    <div class="main-menu-list">
+      <div>
+        <div>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Investment</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-side-wrap">
+      <ul>
+        <li>
+          <a href="#"><img src="assets/icons/star.svg" />Favourites</a>
+        </li>
+        <li>
+          <a href="#"><img src="assets/icons/profile.svg" />Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

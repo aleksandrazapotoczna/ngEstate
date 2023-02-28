@@ -1,0 +1,454 @@
+.main {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  gap: 50px;
+
+  & > div {
+    width: 50%;
+  }
+
+  .about-us {
+    h1 {
+      font-size: 24px;
+      color: #4bcfc8;
+      padding-bottom: 13px;
+      font-weight: 400;
+    }
+    h2 {
+      font-size: 36px;
+      color: #1d1d1d;
+      padding-bottom: 18px;
+      font-weight: bold;
+    }
+
+    h3 {
+      font-size: 16px;
+      color: #1d1d1d;
+      padding-bottom: 13px;
+      font-weight: 200;
+    }
+  }
+
+  .main-plan {
+    position: relative;
+
+    .building {
+      width: 100%;
+    }
+
+    #blue_1 {
+      position: absolute;
+      top: -30px;
+      right: 20px;
+    }
+
+    #green_1 {
+      position: absolute;
+      bottom: -80px;
+      left: 20px;
+    }
+  }
+}
+
+//  numbers section
+
+.numbers-section {
+  margin-top: 110px;
+  background-color: #f9f9f9;
+
+  .about-company {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-top: 114px;
+    color: #1d1d1d;
+
+    h2 {
+      font-size: 36px;
+      padding-bottom: 18px;
+      font-weight: bold;
+    }
+
+    h3 {
+      font-size: 16px;
+      padding-bottom: 13px;
+      font-weight: 200;
+    }
+  }
+
+  .numbers {
+    ul {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+
+      li {
+        max-width: 200px;
+      }
+    }
+
+    .numbers-info {
+      height: 130px;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      // margin-bottom: 130px;
+
+      h1 {
+        font-size: 72px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 18px;
+        max-width: 120px;
+      }
+    }
+  }
+}
+
+// Members section
+
+.team {
+  margin-top: 110px;
+  // margin-left: 83px;
+  // margin-right: 56px;
+  width: 100%;
+
+  .team-info {
+    text-align: center;
+    margin-bottom: 50px;
+
+    h1 {
+      font-size: 24px;
+      color: #4bcfc8;
+      margin-bottom: 9px;
+    }
+
+    h2 {
+      font-size: 36px;
+      font-weight: bold;
+    }
+  }
+  //
+
+  .team-member {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    // align-items: center;
+    width: 100%;
+
+    .team-member-info {
+      background-color: #f9f9f9;
+      border-radius: 30px;
+      max-width: 330px;
+      height: 464px;
+      margin-bottom: 50px;
+
+      .member-photo {
+        img {
+          width: 100%;
+          border-radius: 30px;
+        }
+      }
+
+      h1 {
+        font-size: 24px;
+        color: #1d1d1d;
+        font-weight: bold;
+        margin-top: 20px;
+        margin-left: 34px;
+      }
+
+      h2 {
+        font-size: 14px;
+        color: #4bcfc8;
+        font-weight: 200;
+        margin-bottom: 9px;
+        margin-top: 5px;
+        margin-left: 34px;
+      }
+
+      h3 {
+        font-size: 16px;
+        font-weight: 200;
+        margin-left: 34px;
+        margin-bottom: 9px;
+        margin-right: 40px;
+      }
+
+      .social-footer {
+        margin-left: 34px;
+        margin-top: 30px;
+
+        ul {
+          display: flex;
+          flex-direction: row;
+          padding-bottom: 10px;
+          gap: 10px;
+        }
+      }
+    }
+  }
+}
+
+// Company adverstisment
+
+.promo {
+  padding-top: 72px;
+  background-color: #f9f9f9;
+
+  .grid {
+    display: flex;
+    flex-direction: row;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .main-promo {
+    position: relative;
+
+    h1 {
+      color: #4bcfc8;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .video {
+      width: 100%;
+      // border-radius: 10px;
+    }
+
+    .icon-right {
+      position: absolute;
+      top: -15px;
+      right: 0;
+    }
+  }
+
+  .second-promo {
+    width: 50%;
+    height: 524px;
+    margin-left: 56px;
+    // position: relative;
+
+    h1 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 16px;
+      font-weight: 200;
+      margin-bottom: 28px;
+    }
+
+    .logos {
+      display: flex;
+      flex-direction: row;
+      gap: 10%;
+    }
+
+    .icon-top-left {
+      position: absolute;
+      bottom: 120px;
+      right: 0;
+    }
+
+    .icon-down-left {
+      position: absolute;
+      top: -100px;
+      right: 250px;
+    }
+  }
+}
+
+// opinions
+.opinions {
+  // display: flex;
+  // flex-direction: column;
+
+  .main-opinions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 45px;
+
+    h1 {
+      font-size: 24px;
+      color: #4bcfc8;
+      padding-bottom: 9px;
+    }
+    h2 {
+      font-size: 36px;
+      font-weight: bold;
+    }
+  }
+  .opinions-desc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    height: 220px;
+
+    .user-info {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      img {
+        border-radius: 50%;
+        width: 74px;
+        height: 74px;
+      }
+
+      h1 {
+        font-size: 22px;
+      }
+      h2 {
+        font-size: 14px;
+        color: #6a48c5;
+      }
+
+      .user-info-desc {
+        margin-left: 10px;
+      }
+    }
+
+    p {
+      font-size: 16px;
+      justify-items: center;
+      margin-top: 23px;
+      font-weight: 200;
+      width: 900px;
+    }
+
+    .left {
+      position: absolute;
+      left: 0;
+      top: 100px;
+    }
+
+    .right {
+      position: absolute;
+      right: 0;
+      top: 100px;
+    }
+  }
+}
+
+// Media
+
+@media all and (max-width: 430px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    & > div {
+      width: 100%;
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 200;
+    }
+
+    .main-plan {
+      #green_1,
+      #blue_1 {
+        display: none;
+      }
+    }
+  }
+
+  // numbers
+
+  .numbers-section {
+    .numbers {
+      ul {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+
+        // h2 {
+        //   justify-content: center;
+        // }
+      }
+    }
+  }
+
+  // / Members section
+
+  .team {
+    .team-member {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .team-member-info:last-of-type {
+      display: none;
+    }
+  }
+
+  // Company Advertisment
+
+  .promo {
+    .grid {
+      flex-direction: column;
+    }
+
+    // .icon-right,
+    .icon-top-left,
+    .icon-down-left {
+      display: none;
+    }
+    .logos {
+      flex-wrap: wrap;
+
+      .icon-right {
+        max-width: 100px;
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  // Opinions
+
+  .opinions {
+    margin-top: 130px;
+    .opinions-desc {
+      flex-direction: column;
+      flex-wrap: wrap;
+      margin-bottom: 200px;
+      p {
+        max-width: 331px;
+      }
+
+      img {
+        // align-items: center;
+        // justify-content: center;
+      }
+      .left {
+        position: absolute;
+        left: 140px;
+        top: 250px;
+      }
+
+      .right {
+        position: absolute;
+        right: 140px;
+        top: 250px;
+      }
+    }
+  }
+}

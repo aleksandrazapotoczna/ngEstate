@@ -1,0 +1,22 @@
+body {
+  overflow-x: hidden;
+}
+
+.grid {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media all and (max-width: 430px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.page-section {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+iframe {
+  width: 100%;
+}

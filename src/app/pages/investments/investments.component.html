@@ -1,0 +1,84 @@
+<section class="investments">
+  <div class="main-investments">
+    <div class="grid">
+      <h1>Choose the right property to live</h1>
+      <h2>Our Investments List in Katowice City</h2>
+    </div>
+  </div>
+
+  <!--  -->
+  <div class="investments-nav grid">
+    <div class="investments-nav-info">
+      <p>
+        Found <strong>{{ investments.length }}</strong> investments
+      </p>
+    </div>
+    <div class="investments-nav-select">
+      <p>Select view</p>
+      <img src="assets/icons/select_list.png" alt="" />
+      <img src="assets/icons/select_box.png" alt="" />
+    </div>
+  </div>
+
+  <!--  -->
+  <div class="investments-info grid">
+    <div class="investments-desc" *ngFor="let investment of investments">
+      <shared-card [data]="mapToCard(investment)"></shared-card>
+
+      <!-- <div class="investment-photo">
+        <img [src]="investment.image" alt="" />
+      </div>
+      <div class="data">
+        <h1>{{ investment.name }}</h1>
+        <h2>{{ investment.location }}</h2>
+        <table>
+          <tr>
+            <td>Total apartments:</td>
+            <td>{{ investment.apartments }}</td>
+          </tr>
+          <tr>
+            <td>Reserved:</td>
+            <td>{{ investment.reserved }}</td>
+          </tr>
+          <tr>
+            <td>Average m2 price:</td>
+            <td>{{ investment.price }} PLN</td>
+          </tr>
+        </table>
+        <a [routerLink]="['/apartments/', investment.id]">
+          <button>Show list</button>
+        </a>
+      </div> -->
+    </div>
+  </div>
+
+  <!-- Lista -->
+  <div class="investments-info-list grid">
+    <div class="investments-desc" *ngFor="let investment of investments">
+      <div class="investment-photo">
+        <img [src]="investment.image" alt="" />
+      </div>
+      <div class="data">
+        <div class="data-info">
+          <h1>{{ investment.name }}</h1>
+          <h2>{{ investment.location }}</h2>
+        </div>
+        <div>
+          <p>Total apartments:</p>
+          <p>{{ investment.apartments }}</p>
+        </div>
+        <div>
+          <p>Reserved:</p>
+          <p>{{ investment.reserved }}</p>
+        </div>
+        <div>
+          <p>Average m2 price:</p>
+          <p>{{ investment.price }} PLN</p>
+        </div>
+        <div>
+          <button>Show list</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

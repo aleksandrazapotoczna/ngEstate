@@ -1,0 +1,136 @@
+a {
+  font-family: "Roboto";
+  font-weight: 300;
+  font-size: 18px;
+  color: #1d1d1d;
+  text-decoration: none;
+}
+
+a:active {
+  font-size: bold;
+  color: #1d1d1d;
+  text-decoration: underline;
+  text-decoration-color: #6a48c5;
+}
+
+header {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  height: 75px;
+  // margin-top: 33px;
+  // margin-bottom: 25px;
+  .logo {
+    margin-right: 30px;
+    // margin-left: 83px;
+  }
+  .left-side,
+  .right-side {
+    display: flex;
+    // align-content: flex-start;
+    ul {
+      display: flex;
+      gap: 20px;
+
+      li {
+        align-self: center;
+        a {
+          &.active {
+            border-bottom: 5px solid #6a48c5;
+            border-bottom: 5px solid #6a48c5;
+            padding-bottom: 20px;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+          }
+        }
+      }
+    }
+  }
+  .mobile-menu {
+    display: none;
+  }
+}
+
+.mobile-menu-sidebar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80%;
+  height: 100%;
+  background-color: #fff;
+  transition: all 0.5s ease-in-out;
+  // display: none;
+
+  &.hidden {
+    right: -100%;
+  }
+}
+
+@media all and (max-width: 430px) {
+  // .mobile-menu-sidebar {
+  //   display: block;
+  // }
+  header {
+    .left-side {
+      .nav {
+        display: none;
+      }
+    }
+    .right-side {
+      .secondary-menu {
+        display: none;
+      }
+      .mobile-menu {
+        display: block;
+      }
+    }
+  }
+  //
+
+  .mobile-menu-sidebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    width: 330px;
+
+    .header {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      // width: 100%;
+
+      img {
+        top: 30px;
+      }
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-left: 30px;
+      .main-menu-list {
+        margin-top: 30px;
+
+        li {
+          &::before {
+            content: url("/assets/icons/right_blue.png");
+            padding-right: 10px;
+          }
+        }
+      }
+      .right-side-wrap {
+        display: flex;
+        margin-top: 100px;
+        // align-content: space-between;
+        img {
+          padding-right: 5px;
+        }
+      }
+    }
+  }
+}
