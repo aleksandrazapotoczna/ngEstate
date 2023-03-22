@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Investment } from 'src/app/core/models/investments.model';
 import { InvestmentsService } from 'src/app/core/services/investments.service';
 import { Card } from 'src/app/shared/card/card.model';
@@ -14,12 +15,14 @@ export class InvestmentsComponent implements OnInit {
   constructor(private investmentsService: InvestmentsService) {}
 
   ngOnInit(): void {
-    this.investments = this.investmentsService.investments;
+    this.investmentsService.investments.subscribe((investments) => {
+      this.investments = investments;
+    });
   }
 
   mapToCard(investment: Investment): Card | undefined {
     const card: Card = {
-      id: investment.id,
+      id: investment.objectId,
       image: investment.image,
       title: investment.name,
       subtitle: investment.location,
@@ -35,6 +38,14 @@ export class InvestmentsComponent implements OnInit {
         {
           key: 'Average m2 price:',
           value: investment.price.toString() + ' PLN/',
+        },
+        {
+          key: 'Number of parkings:',
+          value: investment.parking.toString(),
+        },
+        {
+          key: 'Number of garage:',
+          value: investment.garage.toString(),
         },
       ],
       actionText: 'Show list',

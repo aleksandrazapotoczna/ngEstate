@@ -1,129 +1,21 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Apartment } from '../models/apartments.model';
+import { ApiService } from './api.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApartmentsService {
-  apartments: Apartment[] = [
-    {
-      id: 1,
-      investmentId: 1,
-      image: 'assets/images/plan1.png',
-      number: '1.A.0.02_5_700',
-      location: 'Katowice, A. Vetulaniego street',
-      area: 46.75,
-      bedrooms: 2,
-      floor: 0,
-      garage: 1,
-      price: 450000,
-      terrace: 1,
-    },
-    {
-      id: 2,
-      investmentId: 2,
-      image: 'assets/images/plan2.png',
-      number: '4.A.1.05_5_110',
-      location: 'Katowice, A. Vetulaniego street',
-      area: 65.94,
-      bedrooms: 3,
-      floor: 3,
-      garage: 2,
-      price: 630500,
-      terrace: 0,
-    },
-    {
-      id: 3,
-      investmentId: 3,
-      image: 'assets/images/plan3.png',
-      number: '1.A.0.03_4_220',
-      location: 'Katowice, A. Vetulaniego street',
-      area: 55,
-      bedrooms: 2,
-      floor: 0,
-      garage: 0,
-      price: 499000,
-      terrace: 1,
-    },
-    {
-      id: 4,
-      investmentId: 3,
-      image: 'assets/images/plan1.png',
-      number: '1.A.0.02_5_700',
-      location: 'Katowice, A. Vetulaniego street',
-      area: 46.75,
-      bedrooms: 2,
-      floor: 0,
-      garage: 1,
-      price: 450000,
-      terrace: 1,
-    },
-    {
-      id: 5,
-      investmentId: 1,
-      image: 'assets/images/plan2.png',
-      number: '4.A.1.05_5_110',
-      location: 'Katowice, A. Vetulaniego street',
-      area: 65.94,
-      bedrooms: 3,
-      floor: 3,
-      garage: 2,
-      price: 630500,
-      terrace: 0,
-    },
-    {
-      id: 6,
-      investmentId: 2,
-      image: 'assets/images/plan3.png',
-      number: '1.A.0.03_4_220',
-      location: 'Katowice, A. Vetulaniego street',
-      area: 55,
-      bedrooms: 2,
-      floor: 0,
-      garage: 0,
-      price: 499000,
-      terrace: 1,
-    },
-    {
-      id: 7,
-      investmentId: 3,
-      image: 'assets/images/plan2.png',
-      number: '1.A.0.02_5_700',
-      location: 'Katowice, A. Vetulaniego street',
-      area: 46.75,
-      bedrooms: 2,
-      floor: 0,
-      garage: 1,
-      price: 450000,
-      terrace: 1,
-    },
-    {
-      id: 8,
-      investmentId: 1,
-      image: 'assets/images/plan3.png',
-      number: '4.A.1.05_5_110',
-      location: 'Katowice, A. Vetulaniego street',
-      area: 65.94,
-      bedrooms: 3,
-      floor: 3,
-      garage: 2,
-      price: 630500,
-      terrace: 0,
-    },
-    {
-      id: 9,
-      investmentId: 2,
-      image: 'assets/images/plan1.png',
-      number: '1.A.0.03_4_220',
-      location: 'Katowice, A. Vetulaniego street',
-      area: 55,
-      bedrooms: 2,
-      floor: 0,
-      garage: 0,
-      price: 499000,
-      terrace: 1,
-    },
-  ];
+  apartments: Observable<Apartment[]>;
+  selectedApartment: Apartment | undefined = undefined;
 
-  constructor() {}
+  constructor(private api: ApiService) {
+    this.apartments = this.api.getApartments();
+    // this.selectedApartment = this.api.getSelectedApartment();
+  }
+
+  getSelectedApartment(id: string): Observable<Apartment> {
+    return this.api.getSelectedApartment(id);
+  }
 }

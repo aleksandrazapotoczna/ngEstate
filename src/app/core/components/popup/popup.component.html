@@ -1,0 +1,11 @@
+<div class="container" *ngIf="popupState | async">
+  <div class="content">
+    <div class="background" (click)="popupService.popupClose()"></div>
+    <div class="body">
+      <!-- <p>popup works!</p> -->
+      <ng-container
+        *ngTemplateOutlet="popupService.popupTemplate"
+      ></ng-container>
+    </div>
+  </div>
+</div>

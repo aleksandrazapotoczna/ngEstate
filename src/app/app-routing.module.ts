@@ -4,6 +4,7 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ApartmentsComponent } from './pages/apartments/apartments.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { InvestmentsComponent } from './pages/investments/investments.component';
+import { SingleApartmentComponent } from './pages/single-apartment/single-apartment.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,11 @@ const routes: Routes = [
     path: 'apartments/:id',
     component: ApartmentsComponent,
   },
+  {
+    path: 'single-apartment/:id',
+    component: SingleApartmentComponent,
+  },
+
   {
     path: '**',
     redirectTo: '',

@@ -1,95 +1,95 @@
-// apartments-info-list
-.list-desc {
+.list-info {
   display: flex;
-  flex-direction: row;
-  background-color: #f9f9f9;
-  border-radius: 20px;
-  height: 100px;
-  max-width: 100%;
+  flex-direction: column;
+  margin-bottom: 20px;
 
-  .list-photo {
-    max-width: 140px;
-    max-height: 20px;
-    // border-radius: 20px;
-
-    &.fullscreen {
-      padding: 0;
-    }
-    img {
-      object-fit: contain;
-      width: 100%;
-    }
-  }
-
-  .data {
-    flex-basis: 80%;
+  .list-desc {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 24px;
+    // justify-content: center;
+    background-color: #f9f9f9;
+    border-radius: 20px;
+    height: 150px;
+    width: 100%;
 
-    h1 {
-      width: 200px;
-      font-size: 24px;
-      font-weight: bold;
-      padding-bottom: 9px;
-    }
-    h2 {
-      font-size: 14px;
-      color: #4bcfc8;
-      padding-bottom: 19px;
-    }
-    table {
-      width: 100%;
-      height: 64px;
-      font-size: 16px;
-      font-weight: 200;
-      tr {
-        td:first-of-type {
-          text-align: left;
-          width: 60%;
-        }
-        td:last-of-type {
-          text-align: left;
-          width: 40%;
-        }
+    .list-photo {
+      width: 170px;
+      height: 100%;
+      // padding: 15px;
+      border-radius: 20px;
+
+      // &.fullscreen {
+      //   padding: 0;
+      // }
+
+      img {
+        width: 130px;
+        height: 130px;
+        padding: 10px;
+        border-radius: 20px;
       }
     }
 
-    // .data-info {
-    //   flex-basis: 80%;
-    //   display: flex;
-    //   flex-direction: row;
-    //   justify-content: space-between;
+    .data {
+      flex-basis: 80%;
+      justify-content: center;
+      align-items: center;
+      margin-left: 24px;
 
-    //   .main-data-info {
-    //     display: flex;
-    //     flex-direction: column;
-    //     margin-right: 10px;
-    //     h1 {
-    //       font-size: 24px;
-    //       padding-bottom: 10px;
-    //     }
-    //     h2 {
-    //       font-size: 14px;
-    //       color: #4bcfc8;
-    //     }
-    //   }
-    // }
-  }
-  button {
-    flex-basis: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 140px;
-    height: 46px;
-    border-radius: 5px;
-    background-color: #6a48c5;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 200;
-    border-style: none;
+      .data-info {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .main-data-info {
+          display: flex;
+          flex-direction: column;
+
+          h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 5px;
+          }
+          h2 {
+            font-size: 20px;
+            color: #4bcfc8;
+          }
+        }
+        table {
+          width: 30%;
+          font-size: 16px;
+          margin-top: 20px;
+          tr {
+            td {
+              padding-bottom: 3px;
+              //   td:first-of-type {
+              //     text-align: left;
+              //     width: 60%;
+              //   }
+              //   td:last-of-type {
+              //     text-align: left;
+              //     width: 40%;
+              //   }
+            }
+          }
+        }
+
+        a {
+          text-decoration: none;
+
+          button {
+            width: 140px;
+            height: 46px;
+            border-radius: 5px;
+            background-color: #6a48c5;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 200;
+            border-style: none;
+          }
+        }
+      }
+    }
   }
 }

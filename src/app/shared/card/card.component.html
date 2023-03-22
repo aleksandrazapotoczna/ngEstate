@@ -11,6 +11,9 @@
         <td>{{ prop.value }} m<sup>2</sup></td>
       </tr>
     </table>
+    <!--
+    {{ data?.actionUrl }}
+    {{ data?.id }} -->
 
     <a [routerLink]="[data?.actionUrl, data?.id]">
       <button>{{ data?.actionText }}</button>

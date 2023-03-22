@@ -1,9 +1,13 @@
 export interface Investment {
-  id: number;
+  objectId: string;
   image: string;
   name: string;
   location: string;
   apartments: number;
+  parking: number;
+  garage: number;
   reserved: number;
   price: number;
+  createdAt: string;
+  updatedAt: string;
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { map } from 'rxjs';
 import { Apartment } from 'src/app/core/models/apartments.model';
 import { Investment } from 'src/app/core/models/investments.model';
 import { ApartmentsService } from 'src/app/core/services/apartments.service';
@@ -23,20 +24,34 @@ export class ApartmentsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const investmentId = Number(this.route.snapshot.params['id']);
-    this.apartments = this.apartmentsService.apartments.filter((apartment) => {
-      return apartment.investmentId === investmentId;
-    });
-    this.selectedInvestment = this.investmentsService.investments.find(
-      (investment) => {
-        return investment.id === investmentId;
-      }
-    );
+    const investmentId = this.route.snapshot.params['id'];
+    this.apartmentsService.apartments
+      .pipe(
+        map((apartments) =>
+          apartments.filter((apartment) => {
+            return apartment.investmentId === investmentId;
+          })
+        )
+      )
+      .subscribe((apartments) => {
+        this.apartments = apartments;
+      });
+    this.investmentsService.investments
+      .pipe(
+        map((investments) =>
+          investments.find((investment) => {
+            return investment.objectId === investmentId;
+          })
+        )
+      )
+      .subscribe((investment) => {
+        this.selectedInvestment = investment;
+      });
   }
 
   mapToCard(apartment: Apartment): Card | undefined {
     const card: any = {
-      id: apartment.id,
+      id: apartment.objectId,
       image: apartment.image,
       title: apartment.number.toString(),
       subtitle: apartment.location,
@@ -67,15 +82,14 @@ export class ApartmentsComponent implements OnInit {
         },
       ],
       actionText: 'Show apartment',
-      actionUrl: '',
+      actionUrl: '/single-apartment/',
     };
-    console.log(apartment);
     return card;
   }
 
   mapToList(apartment: Apartment): List | undefined {
     const list: List = {
-      id: apartment.id,
+      id: apartment.objectId,
       image: apartment.image,
       title: apartment.number.toString(),
       subtitle: apartment.location,
@@ -106,9 +120,8 @@ export class ApartmentsComponent implements OnInit {
         },
       ],
       actionText: 'Show apartment',
-      actionUrl: '',
+      actionUrl: '/single-apartment/',
     };
-    console.log(apartment);
     return list;
   }
 }

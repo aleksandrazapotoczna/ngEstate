@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,9 @@ import { InvestmentsComponent } from './pages/investments/investments.component'
 import { ApartmentsComponent } from './pages/apartments/apartments.component';
 import { CardComponent } from './shared/card/card.component';
 import { ListComponent } from './shared/list/list.component';
+import { HeadersInterceptor } from './core/interceptors/headers.interceptor';
+import { SingleApartmentComponent } from './pages/single-apartment/single-apartment.component';
+import { PopupComponent } from './core/components/popup/popup.component';
 
 @NgModule({
   declarations: [
@@ -21,9 +25,19 @@ import { ListComponent } from './shared/list/list.component';
     FooterComponent,
     InvestmentsComponent,
     ApartmentsComponent,
+    SingleApartmentComponent,
+    PopupComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, CardComponent, ListComponent],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    CardComponent,
+    ListComponent,
+  ],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HeadersInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
