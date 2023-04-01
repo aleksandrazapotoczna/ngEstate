@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { Investment } from 'src/app/core/models/investments.model';
 import { InvestmentsService } from 'src/app/core/services/investments.service';
 import { Card } from 'src/app/shared/card/card.model';
+import { List } from 'src/app/shared/list/list.model';
 
 @Component({
   selector: 'app-investments',
@@ -12,46 +13,78 @@ import { Card } from 'src/app/shared/card/card.model';
 export class InvestmentsComponent implements OnInit {
   investments: Investment[] = [];
 
-  constructor(private investmentsService: InvestmentsService) {}
+  viewType: string = 'grid';
+
+  constructor(private investmentsService: InvestmentsService) { }
 
   ngOnInit(): void {
     this.investmentsService.investments.subscribe((investments) => {
       this.investments = investments;
+      console.log(investments)
     });
   }
 
-  mapToCard(investment: Investment): Card | undefined {
+  changeView(view: string) {
+    this.viewType = view;
+  }
+
+  mapToCard(investment: Investment): Card {
     const card: Card = {
-      id: investment.objectId,
-      image: investment.image,
-      title: investment.name,
-      subtitle: investment.location,
+      id: investment?.objectId,
+      image: investment?.image,
+      title: investment?.name,
+      subtitle: investment?.location,
       properties: [
         {
           key: 'Total apartments:',
-          value: investment.apartments.toString(),
+          value: investment?.apartments?.toString(),
         },
         {
           key: 'Reserved:',
-          value: investment.reserved.toString(),
+          value: investment?.reserved?.toString(),
         },
         {
           key: 'Average m2 price:',
-          value: investment.price.toString() + ' PLN/',
+          value: investment?.price?.toString() + ' PLN',
         },
         {
           key: 'Number of parkings:',
-          value: investment.parking.toString(),
+          value: investment?.parking?.toString(),
         },
         {
           key: 'Number of garage:',
-          value: investment.garage.toString(),
+          value: investment?.garage?.toString(),
         },
       ],
       actionText: 'Show list',
       actionUrl: '/apartments/',
     };
-    console.log(investment);
     return card;
+  }
+
+  mapToList(investment: Investment): List {
+    const list: List = {
+      id: investment?.objectId,
+      image: investment?.image,
+      title: investment?.name,
+      subtitle: investment?.location,
+      properties: [
+        {
+          key: 'Total apartments:',
+          value: investment?.apartments?.toString(),
+        },
+        {
+          key: 'Reserved:',
+          value: investment?.reserved?.toString(),
+        },
+        {
+          key: 'Average m2 price:',
+          value: investment?.price?.toString() + ' PLN',
+        },
+      ],
+      actionText: 'Show list',
+      actionUrl: '/apartments/',
+    };
+    return list;
   }
 }

@@ -1,32 +1,33 @@
-<div class="list-info">
+<div class="list-container">
   <div class="list-desc">
+
     <div class="list-photo" [ngClass]="{ fullscreen: fullscreenImage }">
       <img [src]="data?.image" alt="" />
     </div>
+
     <div class="data">
       <div class="data-info">
         <div class="main-data-info">
-          <h1>{{ data?.title }}</h1>
-          <h2>{{ data?.subtitle }}</h2>
+          <h4 class="title">{{ data?.title }}</h4>
+          <h6 class="subtitle">{{ data?.subtitle }}</h6>
         </div>
-        <table>
-          <tr *ngFor="let prop of data?.properties">
-            <td>{{ prop.key }}</td>
-            <td>
-              {{ prop.value }}
-              <!-- m<sup>2</sup> -->
-            </td>
-          </tr>
-        </table>
-        <div class="action">
-          <a [routerLink]="[data?.actionUrl, data?.id]">
-            <button>{{ data?.actionText }}</button>
-          </a>
-          <div class="bin" *ngIf="showBinIcon" (click)="delete()">
-            <img src="assets/icons/bin2.png" />
+        <div class="properties">
+          <div class="prop" *ngFor="let prop of data?.properties">
+            <p class="key">{{ prop.key }}</p>
+            <p class="value">{{ prop.value }}</p>
           </div>
         </div>
       </div>
     </div>
+
+    <div class="action">
+      <a [routerLink]="[data?.actionUrl, data?.id]">
+        <button class="btn">{{ data?.actionText }}</button>
+      </a>
+      <div class="bin" *ngIf="showBinIcon" (click)="delete()">
+        <img src="assets/icons/bin2.png" />
+      </div>
+    </div>
+
   </div>
 </div>

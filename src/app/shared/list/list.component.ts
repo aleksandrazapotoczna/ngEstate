@@ -13,11 +13,11 @@ import { List } from './list.model';
 })
 export class ListComponent {
   @Input() data: List | undefined;
-  @Input() fullscreenImage = true;
+  @Input() fullscreenImage: boolean;
   @Input() showBinIcon: boolean | undefined;
   @Output() emitDeleteClick = new EventEmitter<string>();
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService) { }
 
   delete() {
     const id = this.data?.id as string;

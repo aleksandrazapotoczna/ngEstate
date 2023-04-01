@@ -1,22 +1,22 @@
 <div class="card-desc">
+
   <div class="card-photo" [ngClass]="{ fullscreen: fullscreenImage }">
-    <img [src]="data?.image" alt="" />
+    <img [src]="data?.image" />
   </div>
+
   <div class="data">
-    <h1>{{ data?.title }}</h1>
-    <h2>{{ data?.subtitle }}</h2>
+    <h5 class="title">{{ data?.title }}</h5>
+    <p class="subtitle">{{ data?.subtitle }}</p>
     <table>
       <tr *ngFor="let prop of data?.properties">
         <td>{{ prop.key }}</td>
-        <td>{{ prop.value }} m<sup>2</sup></td>
+        <td>{{ prop.value }}</td>
       </tr>
     </table>
-    <!--
-    {{ data?.actionUrl }}
-    {{ data?.id }} -->
 
     <a [routerLink]="[data?.actionUrl, data?.id]">
-      <button>{{ data?.actionText }}</button>
+      <button class="btn">{{ data?.actionText }}</button>
     </a>
   </div>
+
 </div>
