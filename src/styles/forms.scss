@@ -1,0 +1,21 @@
+@import 'variables.scss';
+
+input {
+    background-color: $white;
+    border: 1px solid $grey-1;
+    font-size: 14px;
+    font-weight: 200;
+    color: $black;
+    border-radius: 10px;
+    padding: 12px 16px;
+    outline: none;
+    box-sizing: border-box;
+
+    &:focus {
+        border: 1px solid $grey-2;
+    }
+}
+
+button {
+    border: none;
+}

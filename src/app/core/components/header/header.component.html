@@ -1,30 +1,30 @@
-<header class="grid">
-  <div class="left-side">
-    <div class="logo"><img src="assets/images/logo.png" /></div>
-    <ul class="nav">
-      <li><a routerLink="home" routerLinkActive="active">Homepage</a></li>
-      <li><a routerLink="about-us" routerLinkActive="active">About us</a></li>
-      <li>
-        <a routerLink="investments" routerLinkActive="active">Investments</a>
-      </li>
-      <li><a routerLink="contact" routerLinkActive="active">Contact</a></li>
-    </ul>
-  </div>
-  <div class="right-side">
-    <ul class="secondary-menu">
-      <li>
-        <a href="#"><img src="assets/icons/star.svg" /></a>
-      </li>
-      <li>
-        <a href="#"><img src="assets/icons/profile.svg" /></a>
-      </li>
-      <li><a routerLink="admin">Login</a></li>
-    </ul>
-    <img
-      class="mobile-menu"
-      src="assets/icons/menu.svg"
-      (click)="toggleMenu()"
-    />
+<header>
+  <div class="grid">
+
+    <div class="left-side">
+      <div class="logo"><img src="assets/images/logo.png" /></div>
+      <ul class="nav">
+        <li><a routerLink="home" routerLinkActive="active">Homepage</a></li>
+        <li><a routerLink="about-us" routerLinkActive="active">About us</a></li>
+        <li>
+          <a routerLink="investments" routerLinkActive="active">Investments</a>
+        </li>
+        <li><a routerLink="contact" routerLinkActive="active">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="right-side">
+      <ul class="secondary-menu">
+        <li>
+          <a href="#"><img src="assets/icons/star.svg" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="assets/icons/profile.svg" /></a>
+        </li>
+        <li><a routerLink="admin">Login</a></li>
+      </ul>
+      <img class="mobile-menu" src="assets/icons/menu.svg" (click)="toggleMenu()" />
+    </div>
   </div>
 </header>
 
