@@ -1,0 +1,38 @@
+<!-- <p>investments works!</p> -->
+<!-- <div class="investment">
+  <h3>Add investments</h3>
+  <div class="add-investment">
+    <div class="add-desc">
+      <form action="">
+        <input type="text" placeholder="name" />
+        <input type="text" placeholder="price" />
+        <input type="text" placeholder="location" />
+        <input type="text" placeholder="area" />
+      </form>
+      <button>Save</button>
+    </div> -->
+
+<!--  -->
+<h3>Investments List</h3>
+<a routerLink="../add-investment"><button>Add new</button></a>
+<!--  -->
+<div class="investment-info-list">
+  <div class="investment-desc" *ngFor="let investment of investments">
+    <shared-list
+      [data]="mapToList(investment)"
+      [fullscreenImage]="false"
+      [showBinIcon]="true"
+      (emitDeleteClick)="showPopup($event)"
+    ></shared-list>
+  </div>
+</div>
+
+<ng-template #popupTemplate>
+  <div class="popup-template">
+    <div>Do you want to remove an investment?</div>
+    <div class="answear">
+      <button (click)="deleteInvestment()">YES</button>
+      <button (click)="popupService.popupClose()">NO</button>
+    </div>
+  </div>
+</ng-template>

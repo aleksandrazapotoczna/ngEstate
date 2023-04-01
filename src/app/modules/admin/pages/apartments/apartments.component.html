@@ -1,0 +1,26 @@
+<h3>Add apartment</h3>
+
+<a routerLink="../add-apartment"><button>Add new</button></a>
+<!--  -->
+<div class="apartment-info-list">
+  <div class="investment-desc" *ngFor="let apartment of apartments">
+    <shared-list
+      [data]="mapToList(apartment)"
+      [fullscreenImage]="false"
+      [showBinIcon]="true"
+      (emitDeleteClick)="showPopup($event)"
+    ></shared-list>
+  </div>
+</div>
+
+<ng-template #popupTemplate>
+  <div class="popup-template">
+    <div>Do you want to remove an apartment?</div>
+    <div class="answear">
+      <button (click)="deleteApartment()"><div>YES</div></button>
+      <button (click)="popupService.popupClose()">
+        <div>NO</div>
+      </button>
+    </div>
+  </div>
+</ng-template>

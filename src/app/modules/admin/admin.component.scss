@@ -1,0 +1,92 @@
+app-header,
+app-footer {
+  display: none;
+}
+
+.admin {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+
+  .admin-menu {
+    width: 20%;
+  }
+
+  .content {
+    background-color: #f2f2f2;
+    width: 80%;
+    padding-left: 50px;
+    // height: 100vh;
+
+    h3 {
+      margin-top: 50px;
+      margin-bottom: 35px;
+      font-weight: bold;
+    }
+
+    button {
+      background-color: #6a48c5;
+      font-family: inherit;
+      color: #fff;
+      padding: 10px 30px;
+      border-style: none;
+      border-radius: 20px;
+      width: 152px;
+      margin-bottom: 35px;
+    }
+  }
+}
+
+// .content-body {
+//   background-color: #fff;
+//   border-radius: 20px;
+//   width: 80%;
+//   height: 80%;
+//   justify-content: center;
+//   padding-left: 54px;
+//   margin-top: 60px;
+
+//   input {
+//     display: flex;
+//     flex-direction: column;
+//     margin-bottom: 10px;
+//     border-radius: 10px;
+//     height: 40px;
+//     width: 280px;
+//     border-color: #bebebe;
+//     border-width: 1px;
+//     font-size: 16px;
+//     padding-left: 20px;
+//   }
+// }
+
+// button {
+//   background-color: #6a48c5;
+//   font-family: inherit;
+//   color: #fff;
+//   padding: 10px 30px;
+//   border-style: none;
+//   border-radius: 20px;
+//   width: 152px;
+// }
+
+// .investment {
+//   margin-left: 50px;
+//   height: 100vh;
+
+//
+//   .add-investment {
+//     background-color: #fff;
+//     border-radius: 20px;
+//     width: 80%;
+//     height: 80%;
+//     justify-content: center;
+
+//     .add-desc {
+//       padding-left: 54px;
+//       padding-top: 46px;
+//       padding-bottom: 40px;
+
+//
+//   }
+// }

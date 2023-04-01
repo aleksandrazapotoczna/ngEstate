@@ -1,0 +1,48 @@
+<div class="apartment">
+  <h3>Edit apartment:</h3>
+  <div class="edit-apartment">
+    <div class="add-desc">
+      <form [formGroup]="apartmentForm" (ngSubmit)="onSubmit()">
+        <div class="item">
+          <label for="">Image:</label>
+          <input type="image" id="image" formControlName="image" />
+        </div>
+        <div class="item">
+          <label for="">Number:</label>
+          <input type="text" id="number" formControlName="number" />
+        </div>
+        <div class="item">
+          <label for="">Location:</label>
+          <input type="text" id="location" formControlName="location" />
+        </div>
+        <div class="item">
+          <label for="">Area:</label>
+          <input type="text" id="area" formControlName="area" />
+        </div>
+        <div class="item">
+          <label for="">Bedrooms:</label>
+          <input type="text" id="bedrooms" formControlName="bedrooms" />
+        </div>
+        <div class="item">
+          <label for="">Floor:</label>
+          <input type="text" id="floor" formControlName="floor" />
+        </div>
+        <div class="item">
+          <label for="">Garage:</label>
+          <input type="text" id="garage" formControlName="garage" />
+        </div>
+        <div class="item">
+          <label for="">Terrace:</label>
+          <input type="text" id="terrace" formControlName="terrace" />
+        </div>
+        <div class="item">
+          <label for="">Price:</label>
+          <input type="text" id="price" formControlName="price" />
+        </div>
+        <button type="submit" [disabled]="!apartmentForm.valid || isSaving">
+          Save
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

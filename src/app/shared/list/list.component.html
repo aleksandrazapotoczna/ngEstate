@@ -18,9 +18,14 @@
             </td>
           </tr>
         </table>
-        <a [routerLink]="[data?.actionUrl, data?.id]">
-          <button>{{ data?.actionText }}</button>
-        </a>
+        <div class="action">
+          <a [routerLink]="[data?.actionUrl, data?.id]">
+            <button>{{ data?.actionText }}</button>
+          </a>
+          <div class="bin" *ngIf="showBinIcon" (click)="delete()">
+            <img src="assets/icons/bin2.png" />
+          </div>
+        </div>
       </div>
     </div>
   </div>

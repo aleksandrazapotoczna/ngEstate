@@ -3,11 +3,11 @@ export interface Investment {
   image: string;
   name: string;
   location: string;
-  apartments: number;
+  apartments: string;
   parking: number;
   garage: number;
-  reserved: number;
-  price: number;
-  createdAt: string;
-  updatedAt: string;
+  reserved: string;
+  price: string;
+  createdAt?: string;
+  updatedAt?: string;
 }

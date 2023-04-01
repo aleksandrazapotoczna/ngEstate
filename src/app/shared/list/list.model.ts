@@ -1,9 +1,9 @@
 export interface List {
-  id: number;
+  id: string;
   image: string;
   title: string;
   subtitle: string;
-  properties: Properties[];
+  properties?: Properties[];
   actionText: string;
   actionUrl: string;
 }

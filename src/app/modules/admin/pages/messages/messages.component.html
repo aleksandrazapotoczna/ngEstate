@@ -1,0 +1,33 @@
+<h3>Messages List</h3>
+
+<div class="messages-list">
+  <div class="single-message" *ngFor="let message of messages">
+    <div class="single-message-desc">
+      <div class="client">
+        <p>Name: {{ message?.name }} {{ message?.surname }}</p>
+        <p>Contact: {{ message?.phone }} {{ message?.email }}</p>
+      </div>
+
+      <div class="main-data">
+        <p>{{ message?.topic }}</p>
+        <p>{{ message?.city }}</p>
+        <p>{{ message?.description }}</p>
+      </div>
+    </div>
+    <div class="action">
+      <div class="bin" (click)="showPopup(popupTemplate, message.objectId)">
+        <img src="assets/icons/bin2.png" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #popupTemplate>
+  <div class="popup-template">
+    <div>Do you want to remove a message?</div>
+    <div class="answear">
+      <button (click)="deleteMessage()">YES</button>
+      <button (click)="popupService.popupClose()">NO</button>
+    </div>
+  </div>
+</ng-template>

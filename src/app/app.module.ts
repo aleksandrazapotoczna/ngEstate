@@ -15,6 +15,8 @@ import { ListComponent } from './shared/list/list.component';
 import { HeadersInterceptor } from './core/interceptors/headers.interceptor';
 import { SingleApartmentComponent } from './pages/single-apartment/single-apartment.component';
 import { PopupComponent } from './core/components/popup/popup.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,11 +29,13 @@ import { PopupComponent } from './core/components/popup/popup.component';
     ApartmentsComponent,
     SingleApartmentComponent,
     PopupComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
     CardComponent,
     ListComponent,
   ],

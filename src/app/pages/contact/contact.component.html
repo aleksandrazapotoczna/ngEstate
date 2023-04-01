@@ -1,0 +1,80 @@
+<section>
+  <!--  -->
+  <div class="contact-form">
+    <div class="contact-form-desc">
+      <h3>Contact us</h3>
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <!-- <div class="contact-body"> -->
+        <div class="item">
+          <label for="">Topic:</label>
+          <!-- <input type="text" id="topic" formControlName="topic" /> -->
+          <select class="select" id="topic" formControlName="topic">
+            <option value="Flat | investment apartment">
+              Flat | investment apartment
+            </option>
+            <option value="Build with us">Build with us</option>
+            <option value="Buy a land">Buy a land</option>
+            <option value="Shopping centre">Shopping centre</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="item" id="desc">
+          <label for="">Description:</label>
+          <input type="text" id="description" formControlName="description" />
+        </div>
+        <div class="item">
+          <label for="">City:</label>
+          <select class="select" id="city" formControlName="city">
+            <option value="Katowice">Katowice</option>
+            <option value="Kraków" disabled>Kraków</option>
+            <option value="Wrocław" disabled>Wrocław</option>
+            <option value="Warszawa" disabled>Warszawa</option>
+          </select>
+        </div>
+        <div class="item">
+          <label for="">Name:</label>
+          <input type="text" id="name" formControlName="name" />
+        </div>
+        <div class="item">
+          <label for="">Surname:</label>
+          <input type="text" id="surname" formControlName="surname" />
+        </div>
+        <div class="mobile">
+          <div class="item">
+            <label for="">Phone:</label>
+            <input type="number" id="phone" formControlName="phone" />
+          </div>
+          <div class="item">
+            <label for="">Email:</label>
+            <input type="text" id="email" formControlName="email" />
+          </div>
+        </div>
+        <button type="submit" [disabled]="!contactForm.valid">Send</button>
+        <!-- </div> -->
+      </form>
+    </div>
+  </div>
+  <!--  -->
+  <div class="contact-info">
+    <h3>Sales office Katowice</h3>
+    <div class="contact-desc">
+      <p>ul. Rynek 1</p>
+      <p>40-208 Katowice</p>
+      <p>tel. (+48) 32 123 45 67</p>
+      <p>e-mail: office@katowice.pl</p>
+      <h6>Opening hours:</h6>
+      <p>Monday - Friday: 8.00 - 16.00</p>
+      <p>Saturday: by appointment only</p>
+    </div>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20406.195875020036!2d19.002051589461324!3d50.25879608134928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716ce37ef51355d%3A0x6e92910e4b865d96!2sRynek%2C%2040-000%20Katowice!5e0!3m2!1spl!2spl!4v1680177258844!5m2!1spl!2spl"
+      width="600"
+      height="450"
+      style="border: 0"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+  <div></div>
+</section>

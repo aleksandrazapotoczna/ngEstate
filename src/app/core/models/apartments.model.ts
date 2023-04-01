@@ -1,15 +1,15 @@
 export interface Apartment {
   investmentId: string;
-  objectId: number;
+  objectId: string;
   image: string;
   number: string;
   location: string;
   area: string;
-  bedrooms: number;
-  floor: number;
-  garage: number;
-  price: number;
-  terrace: number;
+  bedrooms: string;
+  floor: string;
+  garage: string;
+  price: string;
+  terrace: string;
   createdAt: string;
   updatedAt: string;
 }
