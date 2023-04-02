@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Apartment } from 'src/app/core/models/apartments.model';
+import { Investment } from 'src/app/core/models/investments.model';
 import { ApiService } from 'src/app/core/services/api.service';
 
 @Component({
@@ -11,6 +12,10 @@ import { ApiService } from 'src/app/core/services/api.service';
 })
 export class EditApartmentComponent implements OnInit {
   isSaving: boolean;
+
+  editMode: boolean;
+
+  investments: Investment[] = [];
 
   apartmentForm = this.fb.group({
     objectId: [''],
@@ -31,33 +36,49 @@ export class EditApartmentComponent implements OnInit {
     private apiService: ApiService,
     private route: ActivatedRoute,
     private router: Router
-  ) {}
+  ) { }
+
+  ngOnInit(): void {
+    const id = this.route.snapshot.params['id'];
+
+    if (id) {
+      this.editMode = true;
+      this.apiService.getSelectedApartment(id).subscribe((data) => {
+        this.apartmentForm.patchValue({
+          ...data,
+        });
+      });
+    } else {
+      this.editMode = false;
+      this.apiService
+        .getInvestments()
+        .subscribe((data) => (this.investments = data));
+    }
+
+
+  }
 
   onSubmit() {
     this.isSaving = true;
-    console.log(this.apartmentForm);
+    if (this.editMode) {
+      this.updateApartment();
+    } else {
+      this.addApartment();
+    }
+  }
+
+  addApartment() {
+    this.apiService
+      .addApartment(this.apartmentForm.value)
+      .subscribe((data) => console.log(data));
+  }
+
+  updateApartment() {
     this.apiService
       .updateApartment(this.apartmentForm.value)
       .subscribe((data) => {
-        console.log(data);
         this.isSaving = false;
         this.router.navigate(['admin', 'apartments']);
       });
   }
-
-  ngOnInit(): void {
-    const id = this.route.snapshot.params['id'];
-    this.apiService.getSelectedApartment(id).subscribe((data) => {
-      this.apartmentForm.patchValue({
-        ...data,
-      });
-      console.log(data);
-    });
-  }
-
-  // private fetch() {
-  //   this.apiService.getApartments().subscribe((apartments) => {
-  //     this.apartments = apartments;
-  //   });
-  // }
 }

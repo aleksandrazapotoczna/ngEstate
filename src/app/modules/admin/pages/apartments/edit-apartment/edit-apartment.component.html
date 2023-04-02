@@ -1,5 +1,6 @@
 <div class="apartment">
-  <h3>Edit apartment:</h3>
+  <h3 *ngIf="editMode">Edit apartment:</h3>
+  <h3 *ngIf="!editMode">Add apartment:</h3>
   <div class="edit-apartment">
     <div class="add-desc">
       <form [formGroup]="apartmentForm" (ngSubmit)="onSubmit()">
@@ -7,6 +8,17 @@
           <label for="">Image:</label>
           <input type="image" id="image" formControlName="image" />
         </div>
+
+        <div class="item" *ngIf="!editMode">
+          <label for="">InvestmentId:</label>
+          <select class="select" name="investment" id="" formControlName="investmentId">
+            <option value="" selected disabled>Select invesment</option>
+            <option [value]="investment?.objectId" *ngFor="let investment of investments">
+              {{ investment.name }}
+            </option>
+          </select>
+        </div>
+
         <div class="item">
           <label for="">Number:</label>
           <input type="text" id="number" formControlName="number" />

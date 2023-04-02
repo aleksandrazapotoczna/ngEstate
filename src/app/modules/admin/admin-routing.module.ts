@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminMenuComponent } from 'src/app/modules/admin/core/components/admin-menu/admin-menu.component';
 import { AdminComponent } from './admin.component';
-import { AddApartmentComponent } from './pages/apartments/add-apartment/add-apartment.component';
 import { ApartmentsComponent } from './pages/apartments/apartments.component';
 import { EditApartmentComponent } from './pages/apartments/edit-apartment/edit-apartment.component';
 import { AddInvestmentComponent } from './pages/investments/add-investment/add-investment.component';
@@ -33,7 +32,7 @@ const routes: Routes = [
       },
       {
         path: 'add-apartment',
-        component: AddApartmentComponent,
+        component: EditApartmentComponent,
       },
       {
         path: 'edit-apartment/:id',
@@ -59,4 +58,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class AdminRoutingModule {}
+export class AdminRoutingModule { }

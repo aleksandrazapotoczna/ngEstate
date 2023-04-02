@@ -12,12 +12,12 @@ import { List } from './list.model';
   imports: [CommonModule, RouterModule],
 })
 export class ListComponent {
-  @Input() data: List | undefined;
+  @Input() data: List;
   @Input() fullscreenImage: boolean;
-  @Input() showBinIcon: boolean | undefined;
+  @Input() showBinIcon: boolean;
   @Output() emitDeleteClick = new EventEmitter<string>();
 
-  constructor(private apiService: ApiService) { }
+  constructor() { }
 
   delete() {
     const id = this.data?.id as string;
