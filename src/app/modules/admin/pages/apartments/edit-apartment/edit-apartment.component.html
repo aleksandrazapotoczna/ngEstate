@@ -1,60 +1,66 @@
-<div class="apartment">
-  <h3 *ngIf="editMode">Edit apartment:</h3>
-  <h3 *ngIf="!editMode">Add apartment:</h3>
-  <div class="edit-apartment">
-    <div class="add-desc">
-      <form [formGroup]="apartmentForm" (ngSubmit)="onSubmit()">
-        <div class="item">
-          <label for="">Image:</label>
-          <input type="image" id="image" formControlName="image" />
-        </div>
+<h3 *ngIf="editMode">Edit apartment:</h3>
+<h3 *ngIf="!editMode">Add apartment:</h3>
 
-        <div class="item" *ngIf="!editMode">
-          <label for="">InvestmentId:</label>
-          <select class="select" name="investment" id="" formControlName="investmentId">
-            <option value="" selected disabled>Select invesment</option>
-            <option [value]="investment?.objectId" *ngFor="let investment of investments">
-              {{ investment.name }}
-            </option>
-          </select>
-        </div>
+<div class="edit-apartment">
+  <div class="form-container">
 
-        <div class="item">
-          <label for="">Number:</label>
-          <input type="text" id="number" formControlName="number" />
-        </div>
-        <div class="item">
-          <label for="">Location:</label>
-          <input type="text" id="location" formControlName="location" />
-        </div>
-        <div class="item">
-          <label for="">Area:</label>
-          <input type="text" id="area" formControlName="area" />
-        </div>
-        <div class="item">
-          <label for="">Bedrooms:</label>
-          <input type="text" id="bedrooms" formControlName="bedrooms" />
-        </div>
-        <div class="item">
-          <label for="">Floor:</label>
-          <input type="text" id="floor" formControlName="floor" />
-        </div>
-        <div class="item">
-          <label for="">Garage:</label>
-          <input type="text" id="garage" formControlName="garage" />
-        </div>
-        <div class="item">
-          <label for="">Terrace:</label>
-          <input type="text" id="terrace" formControlName="terrace" />
-        </div>
-        <div class="item">
-          <label for="">Price:</label>
-          <input type="text" id="price" formControlName="price" />
-        </div>
-        <button type="submit" [disabled]="!apartmentForm.valid || isSaving">
-          Save
-        </button>
-      </form>
+    <div class="image-container">
+      <img [src]="image">
     </div>
+
+    <form [formGroup]="apartmentForm" (ngSubmit)="onSubmit()">
+      <div class="item">
+        <label for="">Image:</label>
+        <input class="file-upload" id="fileUpload" type="file" #upload>
+        <button type="button" (click)="uploadFile(upload)">Upload</button>
+      </div>
+
+      <div class="item" *ngIf="!editMode">
+        <label for="">InvestmentId:</label>
+        <select class="select" name="investment" id="" formControlName="investmentId">
+          <option value="" selected disabled>Select invesment</option>
+          <option [value]="investment?.objectId" *ngFor="let investment of investments">
+            {{ investment.name }}
+          </option>
+        </select>
+      </div>
+
+      <div class="item">
+        <label for="">Number:</label>
+        <input type="text" id="number" formControlName="number" />
+      </div>
+      <div class="item">
+        <label for="">Location:</label>
+        <input type="text" id="location" formControlName="location" />
+      </div>
+      <div class="item">
+        <label for="">Area:</label>
+        <input type="text" id="area" formControlName="area" />
+      </div>
+      <div class="item">
+        <label for="">Bedrooms:</label>
+        <input type="text" id="bedrooms" formControlName="bedrooms" />
+      </div>
+      <div class="item">
+        <label for="">Floor:</label>
+        <input type="text" id="floor" formControlName="floor" />
+      </div>
+      <div class="item">
+        <label for="">Garage:</label>
+        <input type="text" id="garage" formControlName="garage" />
+      </div>
+      <div class="item">
+        <label for="">Terrace:</label>
+        <input type="text" id="terrace" formControlName="terrace" />
+      </div>
+      <div class="item">
+        <label for="">Price:</label>
+        <input type="text" id="price" formControlName="price" />
+      </div>
+      <button class="submit" type="submit" [disabled]="!apartmentForm.valid || isSaving">
+        Save
+      </button>
+    </form>
+
   </div>
 </div>

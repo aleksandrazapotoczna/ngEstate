@@ -1,27 +1,26 @@
-// .investment {
-//   height: 100
-// }
+@import 'variables.scss';
 
 .edit-apartment {
-  background-color: #fff;
+  background-color: $white;
   border-radius: 20px;
-  width: 80%;
-  height: 70vh;
-  justify-content: center;
-  padding-left: 54px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding: 30px;
 
-  .add-desc {
-    height: 80%;
+  .form-container {
+
+    .image-container {
+      img {
+        max-width: 300px;
+      }
+    }
 
     .item {
       display: flex;
-      flex-direction: row;
       align-items: center;
-      justify-content: space-between;
+      margin-bottom: 10px;
+
+      &>*:first-child {
+        width: 200px;
+      }
 
       input {
         margin-right: 20px;
@@ -31,7 +30,6 @@
       select {
         display: flex;
         flex-direction: column;
-        margin-bottom: 10px;
         border-radius: 10px;
         height: 44px;
         width: 63%;
@@ -56,7 +54,6 @@
   input {
     display: flex;
     flex-direction: column;
-    margin-bottom: 10px;
     border-radius: 10px;
     height: 40px;
     width: 280px;
@@ -73,7 +70,7 @@
     }
   }
 
-  button {
+  button.submit {
     background-color: #6a48c5;
     font-family: inherit;
     color: #fff;

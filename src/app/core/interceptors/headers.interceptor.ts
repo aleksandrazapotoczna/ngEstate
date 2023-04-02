@@ -15,7 +15,7 @@ export class HeadersInterceptor implements HttpInterceptor {
     .append('X-Parse-Application-Id', environment.appId)
     .append('X-Parse-REST-API-Key', environment.jsKey);
 
-  constructor() {}
+  constructor() { }
 
   intercept(
     request: HttpRequest<unknown>,

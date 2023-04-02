@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Apartment } from 'src/app/core/models/apartments.model';
 import { Investment } from 'src/app/core/models/investments.model';
 import { ApiService } from 'src/app/core/services/api.service';
+import { Storage, getDownloadURL, ref, uploadBytesResumable } from '@angular/fire/storage';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-edit-apartment',
@@ -11,9 +13,11 @@ import { ApiService } from 'src/app/core/services/api.service';
   styleUrls: ['./edit-apartment.component.scss'],
 })
 export class EditApartmentComponent implements OnInit {
-  isSaving: boolean;
+  private storage: Storage = inject(Storage);
 
+  isSaving: boolean;
   editMode: boolean;
+  image: string;
 
   investments: Investment[] = [];
 
@@ -58,7 +62,7 @@ export class EditApartmentComponent implements OnInit {
 
   }
 
-  onSubmit() {
+  onSubmit(): void {
     this.isSaving = true;
     if (this.editMode) {
       this.updateApartment();
@@ -67,13 +71,33 @@ export class EditApartmentComponent implements OnInit {
     }
   }
 
-  addApartment() {
+  uploadFile(input: HTMLInputElement): void {
+    if (!input.files) return
+
+    const files: FileList = input.files;
+
+    for (let i = 0; i < files.length; i++) {
+      const file = files.item(i);
+      if (file) {
+        const storageRef = ref(this.storage, file.name);
+        uploadBytesResumable(storageRef, file);
+        getDownloadURL(storageRef).then(url => {
+          this.image = url;
+          this.apartmentForm.patchValue({
+            image: url
+          })
+        });
+      }
+    }
+  }
+
+  private addApartment(): void {
     this.apiService
       .addApartment(this.apartmentForm.value)
       .subscribe((data) => console.log(data));
   }
 
-  updateApartment() {
+  private updateApartment(): void {
     this.apiService
       .updateApartment(this.apartmentForm.value)
       .subscribe((data) => {

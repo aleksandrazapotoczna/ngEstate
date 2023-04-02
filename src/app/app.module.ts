@@ -17,6 +17,9 @@ import { SingleApartmentComponent } from './pages/single-apartment/single-apartm
 import { PopupComponent } from './core/components/popup/popup.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     CardComponent,
     ListComponent,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage()),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HeadersInterceptor, multi: true },
