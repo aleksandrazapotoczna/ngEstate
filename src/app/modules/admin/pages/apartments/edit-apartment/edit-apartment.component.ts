@@ -4,7 +4,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Apartment } from 'src/app/core/models/apartments.model';
 import { Investment } from 'src/app/core/models/investments.model';
 import { ApiService } from 'src/app/core/services/api.service';
-import { Storage, getDownloadURL, ref, uploadBytesResumable } from '@angular/fire/storage';
+import {
+  Storage,
+  getDownloadURL,
+  ref,
+  uploadBytesResumable,
+} from '@angular/fire/storage';
 import { from } from 'rxjs';
 
 @Component({
@@ -40,7 +45,7 @@ export class EditApartmentComponent implements OnInit {
     private apiService: ApiService,
     private route: ActivatedRoute,
     private router: Router
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];
@@ -48,6 +53,7 @@ export class EditApartmentComponent implements OnInit {
     if (id) {
       this.editMode = true;
       this.apiService.getSelectedApartment(id).subscribe((data) => {
+        this.image = data.image;
         this.apartmentForm.patchValue({
           ...data,
         });
@@ -58,8 +64,6 @@ export class EditApartmentComponent implements OnInit {
         .getInvestments()
         .subscribe((data) => (this.investments = data));
     }
-
-
   }
 
   onSubmit(): void {
@@ -72,7 +76,7 @@ export class EditApartmentComponent implements OnInit {
   }
 
   uploadFile(input: HTMLInputElement): void {
-    if (!input.files) return
+    if (!input.files) return;
 
     const files: FileList = input.files;
 
@@ -81,11 +85,11 @@ export class EditApartmentComponent implements OnInit {
       if (file) {
         const storageRef = ref(this.storage, file.name);
         uploadBytesResumable(storageRef, file);
-        getDownloadURL(storageRef).then(url => {
+        getDownloadURL(storageRef).then((url) => {
           this.image = url;
           this.apartmentForm.patchValue({
-            image: url
-          })
+            image: url,
+          });
         });
       }
     }

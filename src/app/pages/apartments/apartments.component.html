@@ -6,8 +6,8 @@
     ></div>
     <div class="background"></div>
     <div class="text">
-      <h1>{{ selectedInvestment?.name }}</h1>
-      <h2>{{ selectedInvestment?.location }}</h2>
+      <h5>{{ selectedInvestment?.name }}</h5>
+      <h3>{{ selectedInvestment?.location }}</h3>
     </div>
   </div>
 
@@ -20,38 +20,36 @@
     </div>
     <div class="explore-nav-select">
       <p>Select view</p>
-      <img src="assets/icons/select_list.png" alt="" />
-      <img src="assets/icons/select_box.png" alt="" />
+      <img
+        src="assets/icons/select_list.png"
+        (click)="changeView('list')"
+        [ngClass]="{ selected: viewType === 'list' }"
+      />
+      <img
+        src="assets/icons/select_box.png"
+        (click)="changeView('grid')"
+        [ngClass]="{ selected: viewType === 'grid' }"
+      />
     </div>
   </div>
 
-  <!--  Card -->
-
-  <div class="apartments-info grid">
-    <div class="apartments-desc" *ngFor="let apartment of apartments">
-      <shared-card
-        [data]="mapToCard(apartment)"
-        [fullscreenImage]="false"
-      ></shared-card>
+  <div class="collection grid">
+    <div class="card-view" *ngIf="viewType === 'grid'">
+      <div class="card" *ngFor="let apartment of apartments">
+        <shared-card
+          [data]="mapToCard(apartment)"
+          [fullscreenImage]="false"
+        ></shared-card>
+      </div>
     </div>
-  </div>
 
-  <!--  Lista -->
-  <div class="apartments-info-list grid">
-    <div class="apartments-desc" *ngFor="let apartment of apartments">
-      <shared-list
-        [data]="mapToList(apartment)"
-        [fullscreenImage]="false"
-      ></shared-list>
+    <div class="list-view" *ngIf="viewType === 'list'">
+      <div class="list" *ngFor="let apartment of apartments">
+        <shared-list
+          [data]="mapToList(apartment)"
+          [fullscreenImage]="false"
+        ></shared-list>
+      </div>
     </div>
   </div>
 </section>
-
-<!--  Rzuty -->
-
-<!-- <section class="single-apartment">
-  <div class="single-image">
-    <img src="assets/images/rzut-1.jpg" alt="" />
-  </div>
-  <div class="single-info">121313</div>
-</section> -->

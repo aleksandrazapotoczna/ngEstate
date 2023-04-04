@@ -17,6 +17,8 @@ export class ApartmentsComponent implements OnInit {
   apartments: Apartment[] = [];
   selectedInvestment: Investment | undefined = undefined;
 
+  viewType: string = 'grid';
+
   constructor(
     private apartmentsService: ApartmentsService,
     private route: ActivatedRoute,
@@ -47,6 +49,10 @@ export class ApartmentsComponent implements OnInit {
       .subscribe((investment) => {
         this.selectedInvestment = investment;
       });
+  }
+
+  changeView(view: string) {
+    this.viewType = view;
   }
 
   mapToCard(apartment: Apartment): Card | undefined {
