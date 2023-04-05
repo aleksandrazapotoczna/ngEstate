@@ -64,27 +64,27 @@ export class ApartmentsComponent implements OnInit {
       properties: [
         {
           key: 'living area',
-          value: apartment.area.toString(),
+          value: apartment?.area?.toString(),
         },
         {
           key: 'Bedrooms:',
-          value: apartment.bedrooms.toString(),
+          value: apartment?.bedrooms?.toString(),
         },
         {
           key: 'Floor:',
-          value: apartment.floor.toString(),
+          value: apartment?.floor?.toString(),
         },
         {
           key: 'Garage:',
-          value: apartment.garage.toString(),
+          value: apartment?.garage?.toString(),
         },
         {
           key: 'Price:',
-          value: apartment.price.toString(),
+          value: apartment?.price?.toString(),
         },
         {
           key: 'Terrace:',
-          value: apartment.terrace.toString(),
+          value: apartment?.terrace?.toString(),
         },
       ],
       actionText: 'Show apartment',
@@ -102,27 +102,19 @@ export class ApartmentsComponent implements OnInit {
       properties: [
         {
           key: 'living area',
-          value: apartment.area.toString(),
+          value: apartment?.area?.toString(),
         },
         {
           key: 'Bedrooms:',
-          value: apartment.bedrooms.toString(),
+          value: apartment?.bedrooms?.toString(),
         },
         {
           key: 'Floor:',
-          value: apartment.floor.toString(),
-        },
-        {
-          key: 'Garage:',
-          value: apartment.garage.toString(),
+          value: apartment?.floor?.toString(),
         },
         {
           key: 'Price:',
-          value: apartment.price.toString(),
-        },
-        {
-          key: 'Terrace:',
-          value: apartment.terrace.toString(),
+          value: apartment?.price?.toString() + ' PLN',
         },
       ],
       actionText: 'Show apartment',

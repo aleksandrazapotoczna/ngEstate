@@ -6,6 +6,11 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { InvestmentsComponent } from './pages/investments/investments.component';
 import { SingleApartmentComponent } from './pages/single-apartment/single-apartment.component';
+import { AboutCompanyComponent } from './pages/about-us/about-company/about-company.component';
+import { CompanyNumbersComponent } from './pages/about-us/company-numbers/company-numbers.component';
+import { TeamMembersComponent } from './pages/about-us/team-members/team-members.component';
+import { CompanyAdvertismentComponent } from './pages/about-us/company-advertisment/company-advertisment.component';
+import { OpinionsComponent } from './pages/about-us/opinions/opinions.component';
 
 const routes: Routes = [
   {

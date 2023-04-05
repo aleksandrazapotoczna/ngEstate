@@ -1,0 +1,84 @@
+@import "variables.scss";
+
+.main {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  gap: 50px;
+
+  & > div {
+    width: 50%;
+  }
+
+  .about-us {
+    h5 {
+      color: $blue;
+      padding-bottom: 13px;
+      font-weight: 400;
+    }
+    h3 {
+      color: $black;
+      padding-bottom: 18px;
+      font-weight: bold;
+    }
+
+    p {
+      color: $black;
+      padding-bottom: 13px;
+      font-weight: 300;
+    }
+  }
+
+  .main-plan {
+    display: flex;
+    position: relative;
+    align-self: stretch;
+
+    .building {
+      width: 100%;
+    }
+
+    #blue_1 {
+      position: absolute;
+      top: -30px;
+      right: 40px;
+    }
+
+    #green_1 {
+      position: absolute;
+      bottom: -80px;
+      left: 90px;
+    }
+  }
+}
+
+@media all and (max-width: $screen-xlarge) {
+  .main,
+  .team,
+  .opinions {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .main {
+    padding: 60px 30px;
+    margin: 0;
+    gap: 0;
+
+    .about-us {
+      width: 100%;
+    }
+
+    .main-plan {
+      display: flex;
+      justify-items: center;
+      margin: 0;
+
+      #green_1,
+      #blue_1 {
+        display: none;
+      }
+    }
+  }
+}

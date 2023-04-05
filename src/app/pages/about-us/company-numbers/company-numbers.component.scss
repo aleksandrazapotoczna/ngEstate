@@ -1,0 +1,96 @@
+@import "variables.scss";
+
+.numbers-section {
+  margin-top: 40px;
+  background-color: $grey-4;
+  padding-bottom: 130px;
+
+  .about-company {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-top: 110px;
+    color: $black;
+
+    h3 {
+      font-size: 36px;
+      font-weight: bold;
+    }
+
+    p {
+      padding: 15px 200px;
+      font-weight: 300;
+    }
+  }
+
+  .numbers {
+    ul {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+
+      li {
+        max-width: 200px;
+
+        &:first-of-type {
+          h1 {
+            color: $blue;
+          }
+        }
+
+        &:nth-of-type(3) {
+          h1 {
+            color: $purple;
+          }
+        }
+        &:nth-of-type(5) {
+          h1 {
+            margin-bottom: 40px;
+          }
+        }
+        &:nth-of-type(5) {
+          h6 {
+            margin-top: -20px;
+          }
+        }
+      }
+    }
+
+    .numbers-info {
+      display: flex;
+      flex-direction: column;
+      height: 130px;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+
+      h1 {
+        font-size: 72px;
+        font-weight: bold;
+        color: $black;
+      }
+
+      h6 {
+        max-width: 120px;
+      }
+    }
+  }
+}
+
+@media all and (max-width: $screen-xlarge) {
+  .numbers-section {
+    .about-company {
+      p {
+        padding: 15px 30px;
+        font-weight: 300;
+      }
+    }
+  }
+  .numbers {
+    ul {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+  }
+}

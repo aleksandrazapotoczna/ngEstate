@@ -1,0 +1,35 @@
+<section class="opinions grid">
+  <div class="main-opinions">
+    <h5>Testimonials</h5>
+    <h3>What Our Client Say?</h3>
+  </div>
+  <!--  -->
+  <div class="opinions-desc">
+    <div class="user-info">
+      <div class="user-photo">
+        <img [src]="usersOpinions[selectedUser].image" alt="" />
+      </div>
+      <div class="user-info-desc">
+        <p>{{ usersOpinions[selectedUser].name }}</p>
+        <p class="position">{{ usersOpinions[selectedUser].position }}</p>
+      </div>
+    </div>
+    <p class="opinion">
+      {{ usersOpinions[selectedUser].opinion }}
+    </p>
+    <div class="arrows">
+      <img
+        class="left"
+        (click)="previousSlide()"
+        src="assets/icons/turn_left.png"
+        alt=""
+      />
+      <img
+        class="right"
+        (click)="nextSlide()"
+        src="assets/icons/turn_right.png"
+        alt=""
+      />
+    </div>
+  </div>
+</section>

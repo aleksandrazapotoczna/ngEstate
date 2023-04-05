@@ -1,0 +1,33 @@
+<section class="team grid">
+  <div class="team-info">
+    <h5>Team Members</h5>
+    <h3>Our Professional Team</h3>
+  </div>
+
+  <!--  -->
+  <div class="team-member">
+    <div class="team-member-info" *ngFor="let user of users">
+      <div class="member-photo">
+        <img [src]="user.image" alt="" />
+      </div>
+      <div class="member-desc">
+        <h5>{{ user.name }}</h5>
+        <p class="position">{{ user.position }}</p>
+        <p>{{ user.desc }}</p>
+        <div class="social-footer">
+          <ul>
+            <li *ngIf="user.facebookLink">
+              <img src="assets/icons/facebook.svg" alt="" />
+            </li>
+            <li *ngIf="user.twitterLink">
+              <img src="assets/icons/twitter.svg" alt="" />
+            </li>
+            <li *ngIf="user.linkedinLink">
+              <img src="assets/icons/linkedin.svg" alt="" />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

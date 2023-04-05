@@ -1,0 +1,58 @@
+<div class="apartment-plan">
+  <div class="single-apartment-plan-grid">
+    <div class="price">
+      <h1>{{ selectedApartment?.price }} PLN</h1>
+      <p class="priceForMeter">{{ costForMeter() }} PLN/m<sup>2</sup></p>
+    </div>
+    <p>CURRENT PRICE</p>
+    <button class="btn">Buy appartment</button>
+    <div class="selected-apartment-info">
+      <div class="selected-apartment-desc">
+        <table>
+          <tr>
+            <td>Number of apartment:</td>
+            <td>{{ selectedApartment?.number }}</td>
+          </tr>
+          <tr>
+            <td>Area:</td>
+            <td>{{ selectedApartment?.area }}m2</td>
+          </tr>
+          <tr>
+            <td>Floor:</td>
+            <td>{{ selectedApartment?.floor }}</td>
+          </tr>
+          <tr>
+            <td>Number of bedrooms:</td>
+            <td>{{ selectedApartment?.bedrooms }}</td>
+          </tr>
+          <tr>
+            <td>Number of garage:</td>
+            <td>{{ selectedApartment?.garage }}</td>
+          </tr>
+          <tr>
+            <td>Number of terraces:</td>
+            <td>{{ selectedApartment?.terrace }}</td>
+          </tr>
+          <tr>
+            <td>Total price:</td>
+            <td>{{ selectedApartment?.price }}</td>
+          </tr>
+          <tr>
+            <td>Price for m2:</td>
+            <td>{{ costForMeter() }} PLN/m<sup>2</sup></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <img [src]="selectedApartment?.image" />
+    <button class="btn-view" (click)="popupService.popupOpen(popupTemplate)">
+      View plan
+    </button>
+  </div>
+</div>
+
+<ng-template #popupTemplate>
+  <div class="popup-template">
+    <img [src]="selectedApartment?.image" /></div
+></ng-template>

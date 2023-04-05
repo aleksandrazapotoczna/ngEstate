@@ -1,0 +1,61 @@
+<div class="credit">
+  <h5>Credit calculator</h5>
+  <div class="credit-calculator">
+    <div class="credit-cost">
+      <div class="credit-alert">
+        <label for="cost">Amount of credit</label>{{ costAmount }} PLN
+      </div>
+      <input
+        type="range"
+        id="cost"
+        name="cost"
+        min="50000"
+        max="2000000"
+        step="50000"
+        #cost
+        (change)="costSelected(cost.value)"
+      />
+    </div>
+
+    <div class="credit-years">
+      <div class="credit-alert">
+        <label for="years">Loan period</label>{{ yearsAmount }} years
+      </div>
+      <input
+        type="range"
+        id="years"
+        name="years"
+        min="1"
+        max="30"
+        step="1"
+        #years
+        (change)="yearsSelected(years.value)"
+      />
+    </div>
+    <div class="credit-rate">
+      <div class="credit-rate-info">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam,
+          quasi sequi aspernatur sapiente quam saepe laudantium quis eligendi
+          labore, cumque autem optio quae nostrum voluptate cum, obcaecati
+          accusantium voluptas odio. Assumenda debitis. Lorem ips
+          <br /><br />dignissimos necessitatibus assumenda non adipisci
+          reprehenderit debitis tempora itaque nostrum quia, architecto quos
+          sapiente, incidunt, ea praesentium!
+        </p>
+      </div>
+      <div class="credit-rate-cost">
+        <div class="sum-credit">
+          <p>Loan installment :</p>
+          <div class="credit-rate-cost-info">
+            <img src="assets/icons/sol-home.png" alt="" />
+            <div class="credit-alert">{{ rateResult }} PLN</div>
+          </div>
+          <div>
+            <p>RRSO 7,8%</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
