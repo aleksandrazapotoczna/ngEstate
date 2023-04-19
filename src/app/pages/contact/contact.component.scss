@@ -1,7 +1,9 @@
+@import "variables";
+
 section {
   display: flex;
   flex-direction: row;
-  margin: 30px 20px;
+  // margin: 30px 20px;
   font-size: 16px;
 
   .contact-form,
@@ -10,6 +12,7 @@ section {
     height: 100vh;
     border-radius: 20px;
     padding: 30px 20px;
+    margin-top: 50px;
   }
 
   .contact-form {
@@ -103,6 +106,18 @@ section {
           margin-bottom: 20px;
         }
       }
+    }
+  }
+}
+
+@media all and (max-width: $screen-large) {
+  section {
+    display: flex;
+    flex-direction: column;
+
+    .contact-form,
+    .contact-info {
+      width: 100%;
     }
   }
 }

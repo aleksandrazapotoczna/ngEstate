@@ -67,6 +67,7 @@ export class EditApartmentComponent implements OnInit {
   }
 
   onSubmit(): void {
+    if (this.isSaving === true) return;
     this.isSaving = true;
     if (this.editMode) {
       this.updateApartment();
