@@ -1,9 +1,7 @@
 <section class="single-apartment">
+
   <div class="main-single-apartment grid">
-    <div
-      class="image"
-      [style.background-image]="'url(' + selectedInvestment?.image + ')'"
-    ></div>
+    <div class="image" [style.background-image]="'url(' + selectedInvestment?.image + ')'"></div>
     <div class="background"></div>
     <div class="text">
       <h5>{{ selectedInvestment?.name }}</h5>
@@ -11,19 +9,17 @@
     </div>
   </div>
 
-  <!--  -->
-
   <div class="single-apartment-info grid">
+
     <div class="apartment-desc">
       <app-about-investment></app-about-investment>
-
       <app-solutions></app-solutions>
-
       <app-apartment-services></app-apartment-services>
-
       <app-credit></app-credit>
     </div>
 
     <app-apartment-plan></app-apartment-plan>
+
   </div>
+
 </section>

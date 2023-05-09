@@ -2,6 +2,8 @@
 
 // opinions
 .opinions {
+  margin: 100px 0;
+
   .main-opinions {
     display: flex;
     flex-direction: column;
@@ -12,11 +14,13 @@
       color: $blue;
       padding-bottom: 9px;
     }
+
     h3 {
       font-size: 36px;
       font-weight: bold;
     }
   }
+
   .opinions-desc {
     display: flex;
     flex-direction: column;
@@ -65,12 +69,14 @@
       position: absolute;
       left: 0;
       top: 80px;
+      cursor: pointer;
     }
 
     .right {
       position: absolute;
       right: 0;
       top: 80px;
+      cursor: pointer;
     }
   }
 }

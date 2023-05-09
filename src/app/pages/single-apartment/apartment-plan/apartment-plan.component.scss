@@ -13,18 +13,25 @@
   }
 
   .price {
-    h1 {
-      font-weight: bold;
-      padding-bottom: 20px;
-      text-align: center;
+    margin-bottom: 30px;
+
+    .subtitle {
+      margin-bottom: 5px;
     }
+
+    h1 {
+      font-weight: 700;
+      text-align: center;
+      line-height: 1;
+    }
+
     p {
       &.priceForMeter {
         font-size: 24px;
-        font-weight: bold;
       }
     }
   }
+
   p {
     text-align: center;
   }
@@ -36,16 +43,21 @@
       table {
         width: 100%;
         font-size: 16px;
+
         tr {
           line-height: 1.2;
-          tr {
-            padding-bottom: 5px;
-            td:first-of-type {
+
+          td {
+            padding-bottom: 3px;
+            font-weight: 300;
+
+            &:first-of-type {
               text-align: left;
               width: 60%;
             }
-            td:last-of-type {
-              text-align: left;
+
+            &:last-of-type {
+              text-align: right;
               width: 40%;
             }
           }
@@ -87,11 +99,13 @@
 @media all and (max-width: $screen-medium) {
   .apartment-plan {
     margin-left: 0;
+
     .single-apartment-plan-grid {
       margin: 20px 15px;
       padding: 10px 0;
     }
   }
+
   .popup-template {
     padding: 10px 10px;
   }

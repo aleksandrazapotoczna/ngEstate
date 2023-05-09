@@ -12,20 +12,19 @@ import { PopupService } from 'src/app/core/services/popup.service';
   styleUrls: ['./about-investment.component.scss'],
 })
 export class AboutInvestmentComponent {
-  selectedApartment: Apartment | undefined = undefined;
-  selectedInvestment: Investment | undefined = undefined;
+  selectedApartment: Apartment;
+  selectedInvestment: Investment;
 
   constructor(
     private route: ActivatedRoute,
     private apartmentsService: ApartmentsService,
     private api: ApiService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.apartmentsService
       .getSelectedApartment(this.route.snapshot.params['id'])
       .subscribe((apartment) => {
-        console.log(apartment);
         this.selectedApartment = apartment;
 
         this.api
@@ -34,13 +33,6 @@ export class AboutInvestmentComponent {
             console.log(investment);
             this.selectedInvestment = investment;
           });
-
-        // this.api
-        //   .getSolutions(this.route.snapshot.params['id'])
-        //   .subscribe((solutions) => {
-        //     this.solutions = solutions;
-        //     // console.log(solutions);
-        //   });
       });
   }
 }

@@ -15,9 +15,9 @@ import { Card } from 'src/app/shared/card/card.model';
   styleUrls: ['./single-apartment.component.scss'],
 })
 export class SingleApartmentComponent implements OnInit {
-  selectedApartment: Apartment | undefined = undefined;
-  selectedInvestment: Investment | undefined = undefined;
-  solutions: Solutions | undefined = undefined;
+  selectedApartment: Apartment;
+  selectedInvestment: Investment;
+  solutions: Solutions;
   costAmount: number = 0;
   yearsAmount: number = 0;
   rateResult: number = 0;
@@ -27,7 +27,7 @@ export class SingleApartmentComponent implements OnInit {
     private apartmentsService: ApartmentsService,
     private api: ApiService,
     public popupService: PopupService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.apartmentsService
@@ -47,7 +47,6 @@ export class SingleApartmentComponent implements OnInit {
           .getSolutions(this.route.snapshot.params['id'])
           .subscribe((solutions) => {
             this.solutions = solutions;
-            // console.log(solutions);
           });
       });
   }
@@ -74,8 +73,4 @@ export class SingleApartmentComponent implements OnInit {
     this.rateResult = Math.ceil(result);
   }
 
-  // solutions = {
-  //   monitoring: true,
-  //   wifi: false
-  // }
 }

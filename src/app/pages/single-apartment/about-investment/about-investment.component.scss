@@ -2,6 +2,11 @@
 
 .investment-about {
   margin-bottom: 20px;
+
+  .marg-top {
+    margin-top: 30px;
+  }
+
   h5 {
     color: $black;
     font-weight: bold;
@@ -21,10 +26,14 @@
   p {
     font-weight: 200;
   }
+
   ul {
     font-weight: 200;
 
     li {
+      margin-bottom: 10px;
+      line-height: 1.4;
+
       &::before {
         content: url("/assets/icons/right_blue.png");
         padding-right: 5px;

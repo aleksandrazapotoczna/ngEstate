@@ -3,12 +3,11 @@
 .numbers-section {
   margin-top: 40px;
   background-color: $grey-4;
-  padding-bottom: 130px;
+  padding: 130px 0;
 
   .about-company {
     text-align: center;
     margin-bottom: 20px;
-    padding-top: 110px;
     color: $black;
 
     h3 {
@@ -42,11 +41,13 @@
             color: $purple;
           }
         }
+
         &:nth-of-type(5) {
           h1 {
             margin-bottom: 40px;
           }
         }
+
         &:nth-of-type(5) {
           h6 {
             margin-top: -20px;
@@ -85,6 +86,7 @@
       }
     }
   }
+
   .numbers {
     ul {
       display: flex;

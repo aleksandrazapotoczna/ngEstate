@@ -5,6 +5,7 @@ import { Apartment } from 'src/app/core/models/apartments.model';
 import { Investment } from 'src/app/core/models/investments.model';
 import { ApartmentsService } from 'src/app/core/services/apartments.service';
 import { InvestmentsService } from 'src/app/core/services/investments.service';
+import { MapperService } from 'src/app/core/services/mapper.service';
 import { Card } from 'src/app/shared/card/card.model';
 import { List } from 'src/app/shared/list/list.model';
 
@@ -15,15 +16,16 @@ import { List } from 'src/app/shared/list/list.model';
 })
 export class ApartmentsComponent implements OnInit {
   apartments: Apartment[] = [];
-  selectedInvestment: Investment | undefined = undefined;
+  selectedInvestment: Investment;
 
   viewType: string = 'grid';
 
   constructor(
     private apartmentsService: ApartmentsService,
     private route: ActivatedRoute,
-    private investmentsService: InvestmentsService
-  ) {}
+    private investmentsService: InvestmentsService,
+    private mapper: MapperService
+  ) { }
 
   ngOnInit(): void {
     const investmentId = this.route.snapshot.params['id'];
@@ -55,71 +57,11 @@ export class ApartmentsComponent implements OnInit {
     this.viewType = view;
   }
 
-  mapToCard(apartment: Apartment): Card | undefined {
-    const card: any = {
-      id: apartment.objectId,
-      image: apartment.image,
-      title: apartment.number.toString(),
-      subtitle: apartment.location,
-      properties: [
-        {
-          key: 'living area',
-          value: apartment?.area?.toString(),
-        },
-        {
-          key: 'Bedrooms:',
-          value: apartment?.bedrooms?.toString(),
-        },
-        {
-          key: 'Floor:',
-          value: apartment?.floor?.toString(),
-        },
-        {
-          key: 'Garage:',
-          value: apartment?.garage?.toString(),
-        },
-        {
-          key: 'Price:',
-          value: apartment?.price?.toString(),
-        },
-        {
-          key: 'Terrace:',
-          value: apartment?.terrace?.toString(),
-        },
-      ],
-      actionText: 'Show apartment',
-      actionUrl: '/single-apartment/',
-    };
-    return card;
+  mapToCard(apartment: Apartment): Card {
+    return this.mapper.mapApartmentToCard(apartment);
   }
 
-  mapToList(apartment: Apartment): List | undefined {
-    const list: List = {
-      id: apartment.objectId,
-      image: apartment.image,
-      title: apartment.number.toString(),
-      subtitle: apartment.location,
-      properties: [
-        {
-          key: 'living area',
-          value: apartment?.area?.toString(),
-        },
-        {
-          key: 'Bedrooms:',
-          value: apartment?.bedrooms?.toString(),
-        },
-        {
-          key: 'Floor:',
-          value: apartment?.floor?.toString(),
-        },
-        {
-          key: 'Price:',
-          value: apartment?.price?.toString() + ' PLN',
-        },
-      ],
-      actionText: 'Show apartment',
-      actionUrl: '/single-apartment/',
-    };
-    return list;
+  mapToList(apartment: Apartment): List {
+    return this.mapper.mapApartmentToList(apartment);
   }
 }

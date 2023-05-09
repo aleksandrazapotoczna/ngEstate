@@ -1,9 +1,7 @@
 <section class="explore">
+
   <div class="main-explore grid">
-    <div
-      class="image"
-      [style.background-image]="'url(' + selectedInvestment?.image + ')'"
-    ></div>
+    <div class="image" [style.background-image]="'url(' + selectedInvestment?.image + ')'"></div>
     <div class="background"></div>
     <div class="text">
       <h5>{{ selectedInvestment?.name }}</h5>
@@ -11,7 +9,6 @@
     </div>
   </div>
 
-  <!--  -->
   <div class="explore-nav grid">
     <div class="explore-nav-info">
       <p>
@@ -20,36 +17,25 @@
     </div>
     <div class="explore-nav-select">
       <p>Select view</p>
-      <img
-        src="assets/icons/view-type-list.svg"
-        (click)="changeView('list')"
-        [ngClass]="{ selected: viewType === 'list' }"
-      />
-      <img
-        src="assets/icons/view-type-grid.svg"
-        (click)="changeView('grid')"
-        [ngClass]="{ selected: viewType === 'grid' }"
-      />
+      <img src="assets/icons/view-type-list.svg" (click)="changeView('list')"
+        [ngClass]="{ selected: viewType === 'list' }" />
+      <img src="assets/icons/view-type-grid.svg" (click)="changeView('grid')"
+        [ngClass]="{ selected: viewType === 'grid' }" />
     </div>
   </div>
 
   <div class="collection grid">
     <div class="card-view" *ngIf="viewType === 'grid'">
       <div class="card" *ngFor="let apartment of apartments">
-        <shared-card
-          [data]="mapToCard(apartment)"
-          [fullscreenImage]="false"
-        ></shared-card>
+        <shared-card [data]="mapToCard(apartment)" [fullscreenImage]="false"></shared-card>
       </div>
     </div>
 
     <div class="list-view" *ngIf="viewType === 'list'">
       <div class="list" *ngFor="let apartment of apartments">
-        <shared-list
-          [data]="mapToList(apartment)"
-          [fullscreenImage]="false"
-        ></shared-list>
+        <shared-list [data]="mapToList(apartment)" [fullscreenImage]="false"></shared-list>
       </div>
     </div>
   </div>
+
 </section>

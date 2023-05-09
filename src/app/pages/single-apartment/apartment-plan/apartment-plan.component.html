@@ -1,10 +1,10 @@
 <div class="apartment-plan">
   <div class="single-apartment-plan-grid">
     <div class="price">
-      <h1>{{ selectedApartment?.price }} PLN</h1>
+      <p class="subtitle">CURRENT PRICE</p>
+      <h1>{{ selectedApartment?.price }} <span>PLN</span></h1>
       <p class="priceForMeter">{{ costForMeter() }} PLN/m<sup>2</sup></p>
     </div>
-    <p>CURRENT PRICE</p>
     <button class="btn">Buy appartment</button>
     <div class="selected-apartment-info">
       <div class="selected-apartment-desc">
@@ -54,5 +54,6 @@
 
 <ng-template #popupTemplate>
   <div class="popup-template">
-    <img [src]="selectedApartment?.image" /></div
-></ng-template>
+    <img [src]="selectedApartment?.image" />
+  </div>
+</ng-template>
