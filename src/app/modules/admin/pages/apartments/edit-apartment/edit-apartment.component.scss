@@ -1,5 +1,10 @@
 @import "variables.scss";
 
+.title {
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
 .edit-apartment {
   background-color: $white;
   border-radius: 20px;
@@ -17,7 +22,7 @@
       align-items: center;
       margin-bottom: 10px;
 
-      & > *:first-child {
+      &>*:first-child {
         width: 200px;
       }
 

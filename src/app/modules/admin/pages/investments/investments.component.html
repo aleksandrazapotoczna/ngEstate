@@ -1,15 +1,12 @@
-<h3>Investments List</h3>
+<div class="header">
+  <h3 class="title">Investments List</h3>
+  <a routerLink="../add-investment"><button>Add new</button></a>
+</div>
 
-<a routerLink="../add-investment"><button>Add new</button></a>
-<!--  -->
 <div class="investment-info-list">
   <div class="investment-desc" *ngFor="let investment of investments">
-    <shared-list
-      [data]="mapToList(investment)"
-      [fullscreenImage]="false"
-      [showBinIcon]="true"
-      (emitDeleteClick)="showPopup($event)"
-    ></shared-list>
+    <shared-list [data]="mapToList(investment)" [fullscreenImage]="false" [showBinIcon]="true"
+      (emitDeleteClick)="showPopup($event)"></shared-list>
   </div>
 </div>
 

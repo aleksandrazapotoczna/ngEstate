@@ -4,7 +4,6 @@ import { AdminMenuComponent } from 'src/app/modules/admin/core/components/admin-
 import { AdminComponent } from './admin.component';
 import { ApartmentsComponent } from './pages/apartments/apartments.component';
 import { EditApartmentComponent } from './pages/apartments/edit-apartment/edit-apartment.component';
-import { AddInvestmentComponent } from './pages/investments/add-investment/add-investment.component';
 import { EditInvestmentComponent } from './pages/investments/edit-investment/edit-investment.component';
 import { InvestmentsComponent } from './pages/investments/investments.component';
 import { MessagesComponent } from './pages/messages/messages.component';
@@ -42,6 +41,10 @@ const routes: Routes = [
         path: 'messages',
         component: MessagesComponent,
       },
+      {
+        path: '**',
+        redirectTo: 'investments'
+      }
     ],
   },
   {
@@ -58,4 +61,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class AdminRoutingModule {}
+export class AdminRoutingModule { }

@@ -4,7 +4,6 @@ import { ApiService } from 'src/app/core/services/api.service';
 import { InvestmentsService } from 'src/app/core/services/investments.service';
 import { PopupService } from 'src/app/core/services/popup.service';
 import { List } from 'src/app/shared/list/list.model';
-import { AddInvestmentComponent } from './add-investment/add-investment.component';
 
 @Component({
   selector: 'app-investments',
@@ -22,7 +21,7 @@ export class InvestmentsComponent {
     private investmentsService: InvestmentsService,
     private apiService: ApiService,
     public popupService: PopupService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.fetch();

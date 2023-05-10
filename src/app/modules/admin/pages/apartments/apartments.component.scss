@@ -1,5 +1,24 @@
 @import "variables";
 
+.header {
+  margin-bottom: 30px;
+
+  .title {
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  button {
+    background-color: #6a48c5;
+    font-family: inherit;
+    color: #fff;
+    padding: 10px 30px;
+    border-style: none;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+}
+
 .add-apartment {
   background-color: #fff;
   border-radius: 20px;
